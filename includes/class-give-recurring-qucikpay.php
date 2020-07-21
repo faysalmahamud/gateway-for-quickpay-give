@@ -65,7 +65,7 @@ if ( ! class_exists( 'Give_Recurring_QuickPay' ) ) {
 			]);
 
 			if($subscription->getId()){
-				give_get_subscription_note_html();
+
 				give_insert_payment_note( $this->payment_id, __( 'Subscription ID:'.$subscription->getId() ) );
 			}
 
