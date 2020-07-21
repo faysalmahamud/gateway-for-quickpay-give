@@ -1,0 +1,5 @@
+{
+    "require": {
+        "kameli/quickpay-v10": "^6.2"
+    }
+}

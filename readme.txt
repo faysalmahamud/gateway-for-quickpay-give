@@ -40,3 +40,6 @@ Nothing yet
 
 = 1.0.0 =
 * Initial release
+
+== Upgrade Notice ==
+Currently not working with pods. very soon the feature will be added for pods.

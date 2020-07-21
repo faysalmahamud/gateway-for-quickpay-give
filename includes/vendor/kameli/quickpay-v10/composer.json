@@ -1,0 +1,25 @@
+{
+    "name": "kameli/quickpay-v10",
+    "description": "A library to communicate with the Danish payment gateway Quickpay",
+    "keywords": ["quickpay", "api", "form", "payment", "gateway", "v10"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Bøndergaard",
+            "email": "danielboendergaard@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "ext-curl": "*"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.3",
+        "tightenco/collect": "^5.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kameli\\Quickpay\\": "src/"
+        }
+    }
+}
