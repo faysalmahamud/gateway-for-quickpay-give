@@ -46,3 +46,5 @@ Nothing yet
 
 = 1.0.3 =  
 * Display Name and Plugin Permalink Fixed  
+
+
