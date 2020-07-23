@@ -56,7 +56,8 @@ if ( ! class_exists( 'Give_Recurring_QuickPay' ) ) {
 			$currency = give_get_currency( $form_id );
 
 			
-			$amount             = $this->purchase_data['post_data']['give-amount'];
+			$amount = isset($this->purchase_data['post_data']['give-amount']) ? give_maybe_sanitize_amount($this->purchase_data['post_data']['give-amount']): 0;
+
 			try {
 			$subscription = $this->quickpay_api->subscriptions()->create([
 			    'currency' => $currency,
@@ -65,7 +66,7 @@ if ( ! class_exists( 'Give_Recurring_QuickPay' ) ) {
 			]);
 
 			if($subscription->getId()){
-
+				
 				give_insert_payment_note( $this->payment_id, __( 'Subscription ID:'.$subscription->getId() ) );
 			}
 
@@ -112,6 +113,8 @@ if ( ! class_exists( 'Give_Recurring_QuickPay' ) ) {
 				}
 			} 
 			catch (Exception $e) {
+				print_r($e);
+				die();
 				give_record_gateway_error(
 					__( 'Quickpay Error', 'give-quickpay' ),
 					__( 'Transaction Failed.', 'give-quickpay' )
@@ -121,7 +124,7 @@ if ( ! class_exists( 'Give_Recurring_QuickPay' ) ) {
 				give_set_error( 'give-quickpay', __( 'An error occurred while processing your payment. Please try again.', 'give-quickpay' ) );
 
 				// Problems? Send back.
-				give_send_back_to_checkout();
+				//give_send_back_to_checkout();
 			}			
 
 		}
@@ -139,9 +142,17 @@ if ( ! class_exists( 'Give_Recurring_QuickPay' ) ) {
 			return $ret;
 		}
 
-		public function cancel( $subscription, $now = true ) {
+		public function cancel( $subscription, $valid ) {
+			$valid = false;
+			if (
+				$subscription->gateway === $this->id &&
+				! empty( $subscription->profile_id ) &&
+				'active' === $subscription->status
+			) {
+				$valid = true;
+			}
 
-
+			return $ret;
 
 		}		
 		public function can_update_subscription( $ret, $subscription ) {
@@ -168,19 +179,18 @@ if ( ! class_exists( 'Give_Recurring_QuickPay' ) ) {
 
 			return $ret;
 		}
-		public function link_profile_id( $profile_id, $subscription ) {
+		// public function link_profile_id( $profile_id, $subscription ) {
 
-			if ( ! empty( $profile_id ) ) {
-				$payment    = new Give_Payment( $subscription->parent_payment_id );
-				$html       = '<a href="%s" target="_blank">' . $profile_id . '</a>';
-				$base_url   = 'live' === $payment->mode ? 'https://dashboard.quickpay.com/' : 'https://dashboard.quickpay.com/test/';
-				$link       = esc_url( $base_url . 'subscriptions/' . $profile_id );
-				$profile_id = sprintf( $html, $link );
-			}
+		// 	if ( ! empty( $profile_id ) ) {
+		// 		$payment    = new Give_Payment( $subscription->parent_payment_id );
+		// 		$html       = 'https://manage.quickpay.net/account/115322/subscriptions';
+		// 		$link       = esc_url( $base_url . 'subscriptions/' . $profile_id );
+		// 		$profile_id = sprintf( $html, $link );
+		// 	}
 
-			return $profile_id;
+		// 	return $profile_id;
 
-		}				
+		// }				
 			
 	}
 

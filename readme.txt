@@ -9,7 +9,7 @@ Requires Give: 2.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Quickpay Gateway Add-on for Give.
+Payment Gateway for Quickpay on Give.
 
 == Description ==
 This plugin requires the Give plugin activated to function properly. When activated, it adds a payment gateway for quickpay.com.

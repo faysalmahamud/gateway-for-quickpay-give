@@ -7,8 +7,6 @@ use Kameli\Quickpay\Quickpay;
 
 function quick_payments($donation_id, $data, $currency){
 	try {
-    	//print_r($data);
-        //die();
 	    $api_key = give_get_option( 'quickpay_for_give_api_key' );
 
 	    $qp =  new Quickpay($api_key);
@@ -18,7 +16,7 @@ function quick_payments($donation_id, $data, $currency){
 		    'order_id' => $donation_id,
 		]);		
 
-		if (!empty($payment) && !empty($payment->getId())) {
+		
 			give_insert_payment_note( $donation_id, __( 'Payment Create Successful. Quickpay Transaction ID:'. $payment->getId() ) );
 
 		    $qp->payments()->link($payment->getId(), [
@@ -53,7 +51,7 @@ function quick_payments($donation_id, $data, $currency){
 			'post_status'   =>  'publish'
 		));
 		  give_send_to_success_page();  
-		}
+		
 
 	} catch (Exception $e) {
 		give_record_gateway_error(

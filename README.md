@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: faysal.turjo
 Tags: donations, donation, ecommerce, e-commerce, fundraising, fundraiser, quickpay, gateway
-Version: 1.0.2
+Version: 1.0.3
 Requires at least: 4.8
 Tested up to: 5.0
 Stable tag: trunk
@@ -9,7 +9,7 @@ Requires Give: 2.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Quickpay Gateway Add-on for Give.
+Payment Gateway for Quickpay on Give.
 
 == Description ==
 This plugin requires the Give plugin activated to function properly. When activated, it adds a payment gateway for quickpay.com.
@@ -21,7 +21,7 @@ This plugin requires the Give plugin activated to function properly. When activa
 
 == Installation ==
 
-1. Extract the `give-wp-quickpay.zip` to the `/wp-content/plugins/` directory
+1. Extract the `gateway-for-quickpay-give.zip` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Go to Give wp Donations -> settings -> payments gateway
 4. Enable Quick Pay
