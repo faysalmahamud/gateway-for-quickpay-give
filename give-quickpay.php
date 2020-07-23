@@ -1,14 +1,14 @@
 <?php
 /**
  * Plugin Name: Payment Gateway for Quickpay on Give
- * Plugin URI: https://github.com/faysalmahamud/give-wp-quickpay
+ * Plugin URI: https://github.com/faysalmahamud/gateway-for-quickpay-give
  * Description: Process online donations via the Quickpay payment gateway.
  * Author: Faysal Mahamud
  * Author URI: https://www.linkedin.com/in/turjo
  * Version: 1.0.3
  * Text Domain: gateway-for-quickpay-give
  * Domain Path: /languages
- * GitHub Plugin URI: https://github.com/faysalmahamud/give-wp-quickpay
+ * GitHub Plugin URI: https://github.com/faysalmahamud/gateway-for-quickpay-give
  */
 
 // Exit if accessed directly.
