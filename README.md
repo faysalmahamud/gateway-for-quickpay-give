@@ -17,7 +17,7 @@ This plugin requires the Give plugin activated to function properly. When activa
 = Plugin Features =  
 
 *   Provide Api For quickpay donations form.  
-*   Provide reccuring payments for give wp  
+*   Provide reccuring payments for give wp(For recurring/subscription you must need to be enabled give-recurring addons.)  
 
 == Installation ==  
 
