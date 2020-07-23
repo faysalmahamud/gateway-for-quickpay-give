@@ -1,7 +1,7 @@
 === Plugin Name ===  
 Contributors: faysal.turjo  
 Tags: donations, donation, ecommerce, e-commerce, fundraising, fundraiser, quickpay, gateway  
-Version: 1.0.3  
+Version: 1.0.4  
 Requires at least: 4.8  
 Tested up to: 5.0  
 Stable tag: trunk  
