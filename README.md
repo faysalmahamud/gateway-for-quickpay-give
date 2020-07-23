@@ -38,9 +38,9 @@ Nothing yet
 
 == Changelog ==
 
-= 1.0.0 =
-* Initial release
-= 1.0.2 =
-* Error Resolved
-= 1.0.3 =
-* Display Name and Plugin Permalink Fixed
+= 1.0.0 =  
+* Initial release  
+= 1.0.2 =  
+* Error Resolved  
+= 1.0.3 =  
+* Display Name and Plugin Permalink Fixed  
